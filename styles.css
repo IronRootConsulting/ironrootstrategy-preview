@@ -53,6 +53,9 @@ nav a:hover{color:var(--navy)}
 .btn.nav{margin-left:14px;padding:9px 14px;font-size:.84rem}
 
 .hero{padding:92px 0 76px;background:linear-gradient(180deg,#0B1526 0%,#112545 58%,#16304d 100%);color:#fff}
+.hero-layout{display:grid;grid-template-columns:minmax(0,1fr) 240px;gap:40px 48px;align-items:center}
+.hero-portrait{margin:0;width:240px;justify-self:end;border-radius:18px;padding:3px;background:rgba(199,154,77,.7);box-shadow:0 18px 40px rgba(0,0,0,.28)}
+.hero-portrait img{width:100%;height:auto;aspect-ratio:3/4;object-fit:cover;object-position:center 20%;display:block;border-radius:15px}
 .hero h1{font-size:clamp(2.15rem,4.8vw,3.35rem);line-height:1.12;margin:0 0 22px;max-width:18em;color:#fff;font-weight:600}
 .hero .sub{font-size:1.125rem;line-height:1.6;color:#d7e0ea;max-width:680px;margin:0 0 32px;font-family:Inter,sans-serif;font-weight:400}
 .hero .actions{display:flex;gap:14px;flex-wrap:wrap;margin:0 0 36px}
@@ -109,7 +112,8 @@ h2{font-size:clamp(1.85rem,3.2vw,2.55rem);color:var(--navy);margin:0 0 16px;text
 .after h3{color:var(--navy);margin:0 0 8px;font-size:1.4rem}
 
 .about-grid{display:grid;grid-template-columns:260px 1fr;gap:48px;align-items:start;max-width:1000px;margin:0 auto}
-.photo-ph{aspect-ratio:3/4;background:#f3f0ea;border-radius:14px;display:flex;align-items:flex-end;justify-content:center;text-align:center;padding:22px 18px;color:#5c6573;font-size:.95rem;line-height:1.45;border:1.5px dashed #c4bdb2;font-family:Inter,sans-serif}
+.about-photo{margin:0;aspect-ratio:3/4;border-radius:14px;overflow:hidden}
+.about-photo img{object-fit:cover;width:100%;height:auto;display:block;border-radius:14px}
 .about-copy p{color:var(--slate);margin:0 0 16px;max-width:720px}
 .metrics{margin:4px 0 18px;padding-left:18px;color:var(--slate);max-width:720px}
 .metrics li{margin-bottom:6px}
@@ -149,6 +153,10 @@ footer strong{color:#fff}
 .nav-more .panel a{margin:0;padding:10px 12px;color:var(--navy);text-decoration:none;border-radius:8px;font-size:.95rem}
 .nav-more .panel a:hover{background:var(--bg)}
 
+@media(max-width:860px){
+  .hero-layout{grid-template-columns:1fr;justify-items:start}
+  .hero-portrait{order:-1;width:168px;justify-self:start}
+}
 @media(max-width:1040px){
   nav > a:not(.btn){display:none}
   .nav-more{display:block}
@@ -156,7 +164,7 @@ footer strong{color:#fff}
   .modes{grid-template-columns:1fr}
   .plans,.about-grid,.two-ways{grid-template-columns:1fr}
   .stat-grid{grid-template-columns:1fr 1fr}
-  .photo-ph{max-width:240px}
+  .about-photo{max-width:240px}
 }
 @media(max-width:720px){
   .top .wrap{
