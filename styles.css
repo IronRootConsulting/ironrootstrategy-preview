@@ -15,7 +15,7 @@ a{color:var(--navy-2)}a:hover{color:var(--gold-d)}
 header.top{position:sticky;top:0;z-index:20;background:rgba(255,255,255,.96);backdrop-filter:blur(8px);border-bottom:1px solid var(--line)}
 .top .wrap{display:flex;align-items:center;justify-content:space-between;min-height:68px;gap:16px}
 .brand{display:flex;align-items:center;gap:10px;text-decoration:none;color:var(--navy);font-weight:700;font-size:1.15rem}
-.brand img{height:40px;width:auto;object-fit:contain;object-position:center}
+.brand img{height:36px;width:auto;object-fit:contain;object-position:center;background:transparent}
 nav{display:flex;align-items:center;flex-wrap:wrap;justify-content:flex-end;gap:4px 0}
 nav a{color:var(--slate);text-decoration:none;margin-left:18px;font-size:.9rem;font-family:Inter,sans-serif}
 nav a:hover{color:var(--navy)}
@@ -83,9 +83,20 @@ footer a{color:#e2e8f0}footer p{margin:4px 0}footer strong{color:#fff}
 @media(max-width:900px){
   .tiles,.modes{grid-template-columns:1fr 1fr}
   .plans,.about-grid,.two-ways{grid-template-columns:1fr}
-  nav a:not(.btn){display:none}
+  nav > a:not(.btn){display:none}
 }
 @media(max-width:560px){
   .tiles,.modes{grid-template-columns:1fr}
   section{padding:56px 0}.hero{padding:48px 0}
+}
+
+.nav-more{display:none;margin-left:10px;font-family:Inter,sans-serif}
+.nav-more > summary{list-style:none;cursor:pointer;color:var(--navy);font-weight:600;font-size:.9rem;padding:8px 10px;border:1px solid var(--line);border-radius:8px}
+.nav-more > summary::-webkit-details-marker{display:none}
+.nav-more[open] > summary{background:var(--bg)}
+.nav-more .panel{position:absolute;right:24px;top:60px;background:#fff;border:1px solid var(--line);border-radius:10px;padding:10px;min-width:180px;box-shadow:0 10px 30px rgba(15,23,42,.12);display:flex;flex-direction:column;z-index:30}
+.nav-more .panel a{margin:0;padding:10px 12px;color:var(--navy);text-decoration:none;border-radius:6px}
+.nav-more .panel a:hover{background:var(--bg)}
+@media(max-width:900px){
+  .nav-more{display:inline-block}
 }
