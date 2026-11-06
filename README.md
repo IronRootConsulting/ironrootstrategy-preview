@@ -20,7 +20,7 @@ Then visit `http://localhost:8080/`.
 
 ## Booking CTAs
 
-Every primary “Book a 5-minute call” button links to:
+Every primary “Book a 15-minute call” button links to:
 
 https://calendar.app.google/rnamZXdXAbJXoZ3T8
 
