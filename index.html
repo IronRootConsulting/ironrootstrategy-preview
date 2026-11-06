@@ -57,8 +57,8 @@
   </div>
   <figure class="hero-portrait">
     <picture>
-      <source type="image/webp" srcset="assets/andrew-malby-390.webp 390w, assets/andrew-malby.webp 780w" sizes="(max-width: 860px) 168px, 240px">
-      <img src="assets/andrew-malby.jpg" srcset="assets/andrew-malby-390.jpg 390w, assets/andrew-malby.jpg 780w" sizes="(max-width: 860px) 168px, 240px" width="780" height="1040" alt="Andrew Malby, founder of IronRoot Consulting" decoding="async">
+      <source type="image/webp" srcset="assets/andrew-malby-390.webp 390w, assets/andrew-malby.webp 780w" sizes="(max-width: 900px) 62vw, 240px">
+      <img src="assets/andrew-malby.jpg" srcset="assets/andrew-malby-390.jpg 390w, assets/andrew-malby.jpg 780w" sizes="(max-width: 900px) 62vw, 240px" width="780" height="1040" alt="Andrew Malby, founder of IronRoot Consulting" decoding="async">
     </picture>
   </figure>
 </div></section>
@@ -151,8 +151,8 @@
   <div class="about-grid">
     <figure class="about-photo">
       <picture>
-        <source type="image/webp" srcset="assets/andrew-malby-390.webp 390w, assets/andrew-malby.webp 780w" sizes="(max-width: 720px) 240px, 260px">
-        <img src="assets/andrew-malby.jpg" srcset="assets/andrew-malby-390.jpg 390w, assets/andrew-malby.jpg 780w" sizes="(max-width: 720px) 240px, 260px" width="780" height="1040" alt="Andrew Malby, founder of IronRoot Consulting" loading="lazy" decoding="async">
+        <source type="image/webp" srcset="assets/andrew-malby-390.webp 390w, assets/andrew-malby.webp 780w" sizes="(max-width: 900px) 72vw, 260px">
+        <img src="assets/andrew-malby.jpg" srcset="assets/andrew-malby-390.jpg 390w, assets/andrew-malby.jpg 780w" sizes="(max-width: 900px) 72vw, 260px" width="780" height="1040" alt="Andrew Malby, founder of IronRoot Consulting" loading="lazy" decoding="async">
       </picture>
     </figure>
     <div class="about-copy">
@@ -233,5 +233,33 @@
     <p>© 2026 IronRoot Consulting LLC</p>
   </div>
 </div></footer>
+<script>
+(function () {
+  var menu = document.querySelector(".nav-more");
+  if (menu) {
+    menu.querySelectorAll("a").forEach(function (link) {
+      link.addEventListener("click", function () { menu.open = false; });
+    });
+    document.addEventListener("keydown", function (event) {
+      if (event.key === "Escape") menu.open = false;
+    });
+  }
+  if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
+  if (!("IntersectionObserver" in window)) return;
+  document.documentElement.classList.add("js-motion");
+  var observer = new IntersectionObserver(function (entries) {
+    entries.forEach(function (entry) {
+      if (!entry.isIntersecting) return;
+      entry.target.classList.add("is-in");
+      observer.unobserve(entry.target);
+    });
+  }, { threshold: 0, rootMargin: "0px 0px -8% 0px" });
+  document.querySelectorAll("main > section:not(.hero)").forEach(function (node) {
+    if (node.getBoundingClientRect().top < window.innerHeight * 0.92) node.classList.add("is-in");
+    node.classList.add("reveal");
+    observer.observe(node);
+  });
+})();
+</script>
 </body>
 </html>
