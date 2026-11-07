@@ -189,7 +189,7 @@ html.js-motion .reveal.is-in{opacity:1;transform:none}
 }
 @media(max-width:900px){
   .hero-layout{grid-template-columns:minmax(0,1fr);justify-items:start;gap:28px}
-  .hero-portrait{order:-1;width:min(62vw,230px);max-width:100%;min-width:0;justify-self:start}
+  .hero-portrait{order:-1;width:min(62vw,230px);max-width:100%;min-width:0;justify-self:center}
   .hero-copy,.hero h1,.hero .sub{max-width:100%}
   .tiles,.modes,.plans,.about-grid,.two-ways,.stat-grid,.proof .stat-grid{grid-template-columns:minmax(0,1fr)}
   .about-photo{max-width:min(72vw,280px)}
@@ -222,10 +222,10 @@ html.js-motion .reveal.is-in{opacity:1;transform:none}
   .brand img{height:32px}
   nav{display:contents}
   .nav-more{grid-column:2;grid-row:1;margin:0;justify-self:end}
-  .btn.nav{grid-column:1 / -1;grid-row:2;justify-self:end;margin:0}
+  a.btn.nav[href="https://calendar.app.google/rnamZXdXAbJXoZ3T8"]{display:none}
   .nav-more[open] .panel{
     position:fixed;inset:0;z-index:70;min-width:0;border:0;border-radius:0;box-shadow:none;
-    background:var(--navy);color:#fff;padding:92px 28px 128px;justify-content:center;gap:2px;
+    background:var(--navy);color:#fff;padding:92px 28px 48px;justify-content:center;gap:2px;
     animation:menu-in .5s cubic-bezier(.16,.84,.24,1);
   }
   .nav-more[open] .panel a{
@@ -235,14 +235,11 @@ html.js-motion .reveal.is-in{opacity:1;transform:none}
   }
   .nav-more[open] .panel a:hover{background:transparent;color:var(--gold)}
   body:has(.nav-more[open]){overflow:hidden}
-  body:has(.nav-more[open]) .btn.nav{
-    position:fixed;left:20px;bottom:22px;z-index:80;width:calc(100% - 40px);margin:0;text-align:center;
-  }
 }
 @media(max-width:900px){
   .tiles,.stat-grid,.proof .stat-grid{grid-template-columns:minmax(0,1fr)}
-  .about-photo{max-width:min(72vw,280px)}
-  main section[id],#proof{scroll-margin-top:156px}
+  .about-photo{max-width:min(72vw,280px);justify-self:center;margin-inline:auto}
+  main section[id],#proof{scroll-margin-top:84px}
 }
 @media(max-width:390px){
   .brand{font-size:.86rem;gap:6px}
