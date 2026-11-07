@@ -3,6 +3,18 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
+<!-- Hostname-gated noindex: injected only on *.github.io. Do not replace with a static robots meta; that would noindex production if these files are published as-is. -->
+<script>
+(function () {
+  var host = (location.hostname || "").toLowerCase();
+  if (host !== "ironrootconsulting.github.io" && !/\.github\.io$/.test(host)) return;
+  if (!document.head) return;
+  var meta = document.createElement("meta");
+  meta.name = "robots";
+  meta.content = "noindex";
+  document.head.appendChild(meta);
+})();
+</script>
 <title>Privacy Policy – IronRoot Consulting</title>
 <link rel="icon" href="favicon.svg" type="image/svg+xml">
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
